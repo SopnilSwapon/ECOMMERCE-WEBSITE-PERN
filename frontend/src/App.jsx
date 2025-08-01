@@ -6,7 +6,7 @@ import ProductPage from './pages/ProductPage'
 
 export default function App() {
   return (
-    <div className='min-h-screen bg-base-200 transition-colors duration-300'>
+    <div className='min-h-screen bg-base-200 transition-colors duration-300' data-them="forest">
 
       <Navbar/>
       <Routes>

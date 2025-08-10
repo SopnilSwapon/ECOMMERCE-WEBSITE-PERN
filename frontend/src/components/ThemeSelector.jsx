@@ -1,10 +1,9 @@
 import { PaletteIcon } from 'lucide-react'
 import { THEMES } from '../constant'
-import { useThemeStore } from '../pages/useThemeStore'
+import { useThemeStore } from '../store/useThemeStore';
 
 export default function ThemeSelector() {
   const {theme, setTheme} = useThemeStore();
-  console.log(theme, 'check theme')
   return (
     <div className='dropdown dropdown-end'>
         {/* dropdown trigger */}

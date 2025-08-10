@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useProductStore } from '../store/useProductStore'
 import ProductCard from '../components/ProductCard';
 import { PackageIcon, PlusCircleIcon, RefreshCwIcon } from 'lucide-react';
+import AddProductModal from '../components/AddProductModal';
 
 export default function HomePage() {
   const {products, error, loading, fetchProducts} = useProductStore();
-    console.log(products, 'checkproduts')
 
   useEffect(() => {
     fetchProducts();
@@ -25,7 +25,7 @@ export default function HomePage() {
         </button>
       </div>
 
-      {/* <AddProductModal /> */}
+      <AddProductModal />
 
       {error && <div className="alert alert-error mb-8">{error}</div>}
 

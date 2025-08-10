@@ -23,10 +23,12 @@ export const useProductStore = create((set, get) => ( {
             const {formData} = get()
            await axios.post(`${BASE_ULR}/api/products`, formData)
            await get().fetchProducts()
-           get.resetForm();
-           toast.success("Product added successfully")
+           get().resetForm();
+           document.getElementById("add_product_modal").close();
+           toast.success("Product added successfully");
         } catch (error) {
-            toast.error(error)
+            console.log(error, 'checkout error')
+            toast.error("Something went wrong")
         } finally{
             set({loading: false})
         }
